@@ -1,9 +1,9 @@
 import java.util.*;
 
-public Class Graph
+public class Graph
 {
 private ArrayList<Vertex> vertices;
-}
+
 
 public Graph()
 {
@@ -22,7 +22,7 @@ public Vertex getVertex(String label)
 {
 for(Vertex v : vertices)
 {
-if(v.getLabel().equal(label))
+if(v.getLabel().equals(label))
 {
 return v;
 }
@@ -53,5 +53,6 @@ System.out.print(adj.getLabel() + " ");
 }
 System.out.println();
 
+}
 }
 }
