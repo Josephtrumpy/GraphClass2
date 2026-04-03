@@ -1,0 +1,57 @@
+import java.util.*;
+
+public Class Graph
+{
+private ArrayList<Vertex> vertices;
+}
+
+public Graph()
+{
+vertices = new ArrayList<>();
+}
+
+public void addVertex(String label)
+{
+if(getVertex(label) == null)
+{
+vertices.add(new Vertex(label));
+}
+}
+
+public Vertex getVertex(String label)
+{
+for(Vertex v : vertices)
+{
+if(v.getLabel().equal(label))
+{
+return v;
+}
+}
+return null;
+}
+
+public void addEdge(String label1, String label2)
+{
+addVertex(label1);
+addVertex(label2);
+
+Vertex v1 = getVertex(label1);
+Vertex v2 = getVertex(label2);
+v1.addAdjacent(v2);
+v2.addAdjacent(v1);
+}
+
+public void printAdjacencyList()
+{
+for(Vertex v : vertices)
+{
+System.out.print(v.getLabel() + "->");
+for(Vertex adj : v.getAdjacentVertices())
+{
+System.out.print(adj.getLabel() + " ");
+
+}
+System.out.println();
+
+}
+}
